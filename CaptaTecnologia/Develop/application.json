@@ -1,0 +1,7 @@
+{
+  "UrlBaseBCB": "https://olinda.bcb.gov.br/olinda",
+  "DbSQlServer": "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"Anderson.mdf\";Integrated Security=True;Connect Timeout=30"
+}
+
+
+  

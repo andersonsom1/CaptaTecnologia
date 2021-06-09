@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CaptaTecnologia": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
