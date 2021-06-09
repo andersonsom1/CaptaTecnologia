@@ -19,6 +19,32 @@ namespace CaptaTecnologia.Repository
 
         }
 
+
+        public async Task<int> UpdateCotacaoMoedaSQLServer(CotacaoValue cotacaoMoeda)
+        {
+            try
+            {
+
+                IDictionary<string, object> Map = new Dictionary<string, object>();
+                Map.Add(Querys.Parameters.@CotacaoCompra.ToString(), cotacaoMoeda.cotacaoCompra);
+                Map.Add(Querys.Parameters.@CotacaoVenda.ToString(), cotacaoMoeda.cotacaoVenda);
+                Map.Add(Querys.Parameters.@DataHora.ToString(), cotacaoMoeda.dataHoraCotacao);
+
+                DynamicParameters dynamicParameters = new DynamicParameters();
+                dynamicParameters.AddDynamicParams(Map);
+
+                return await _dbConnection.ExecuteAsync(Querys.UpsertCotacaoMoedas, dynamicParameters, null, null, CommandType.Text);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+
         public async Task<int> UpdateMoedaSQLServer(Value moedas)
         {
             try

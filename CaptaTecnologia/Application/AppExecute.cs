@@ -25,14 +25,26 @@ namespace CaptaTecnologia.Application
                 //lista de moedas
                 Console.WriteLine("Listando moedas...");
                 Moedas moedas = await _serviceMoedas.GetMoedas();
-                Console.WriteLine("Produtos listados : " + moedas.value.Count());
+                Console.WriteLine("Moedas listados : " + moedas.value.Count());
 
                 if (moedas.value.Any())
                 {
                     //Grava Moedas no banco de dados
                     Console.WriteLine("Gravando moedas no banco...");
-                    await _serviceMoedas.UpdateDb(moedas);
+                    await _serviceMoedas.UpdateDbMoedas(moedas);
                 }
+
+                Console.WriteLine("Listando cotacao moedas...");
+                CotacaoMoeda cotacaoMoeda = await _serviceMoedas.GetCotacaoMoeda(DateTime.Now.AddDays(-1));
+
+                if (cotacaoMoeda.value.Any())
+                {
+                    //Grava Moedas no banco de dados
+                    Console.WriteLine("Gravando cotacao moedas no banco...");
+                    await _serviceMoedas.UpdateDbCotacaoMoedas(cotacaoMoeda);
+                }
+
+
                 Console.WriteLine("Aplicação finalizada com sucesso");
 
                 return await Task.FromResult(true);

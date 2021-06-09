@@ -8,5 +8,6 @@ namespace CaptaTecnologia.Models.Interfaces
     public interface IRepositoryMoedas
     {
         Task<int> UpdateMoedaSQLServer(Value valuemoedas);
+        Task<int> UpdateCotacaoMoedaSQLServer(CotacaoValue valuemoedas);
     }
 }

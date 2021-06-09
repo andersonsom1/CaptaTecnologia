@@ -19,6 +19,18 @@ namespace CaptaTecnologia.Services
             _repositoryMoedas = repositoryMoedas;
         }
 
+        public async Task<CotacaoMoeda> GetCotacaoMoeda(DateTime date)
+        {
+            try
+            {
+                return await _bCBService.GetBCBCotacaoMoedas(date.ToString("MMddyyyy"));
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Um erro ocorreu no Metodo GetMoedas " + e.Message);
+            }
+        }
+
         public async Task<Moedas> GetMoedas()
         {
             try
@@ -32,13 +44,13 @@ namespace CaptaTecnologia.Services
 
         }
 
-        public async Task<bool> UpdateDb(Moedas modelMoedas)
+        public async Task<bool> UpdateDbCotacaoMoedas(CotacaoMoeda cotacaoMoeda)
         {
             try
             {
-                modelMoedas.value.ToList().ForEach(val =>
+                cotacaoMoeda.value.ToList().ForEach(val =>
                 {
-                    _repositoryMoedas.UpdateMoedaSQLServer(val).Wait();
+                    _repositoryMoedas.UpdateCotacaoMoedaSQLServer(val).Wait();
                 });
 
                 return await Task.FromResult(true);
@@ -46,8 +58,29 @@ namespace CaptaTecnologia.Services
             catch (Exception e)
             {
 
-                throw new Exception("Um erro ocorreu no Metodo UpdateDb " + e.Message);
+                throw new Exception("Um erro ocorreu no Metodo UpdateDbCotacaoMoedas " + e.Message);
             }
+
         }
+
+
+    public async Task<bool> UpdateDbMoedas(Moedas modelMoedas)
+    {
+        try
+        {
+            modelMoedas.value.ToList().ForEach(val =>
+            {
+                _repositoryMoedas.UpdateMoedaSQLServer(val).Wait();
+            });
+
+            return await Task.FromResult(true);
+        }
+        catch (Exception e)
+        {
+
+            throw new Exception("Um erro ocorreu no Metodo UpdateDbMoedas " + e.Message);
+        }
+
     }
+}
 }

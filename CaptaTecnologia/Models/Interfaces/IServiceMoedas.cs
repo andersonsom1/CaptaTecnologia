@@ -8,6 +8,8 @@ namespace CaptaTecnologia.Models.Interfaces
     public interface IServiceMoedas
     {
         Task<Moedas> GetMoedas();
-        Task<bool> UpdateDb(Moedas moedas);
+        Task<CotacaoMoeda> GetCotacaoMoeda(DateTime date);
+        Task<bool> UpdateDbMoedas(Moedas moedas);
+        Task<bool> UpdateDbCotacaoMoedas(CotacaoMoeda cotacaoMoeda);
     }
 }

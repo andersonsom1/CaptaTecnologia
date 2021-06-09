@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptaTecnologia", "CaptaTecnologia\CaptaTecnologia.csproj", "{9A1EF78E-6BD1-4E40-B62F-D236463AE04C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CaptaTecnologia", "CaptaTecnologia\CaptaTecnologia.csproj", "{9A1EF78E-6BD1-4E40-B62F-D236463AE04C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptaTecnologiaAPI", "CaptaTecnologiaAPI\CaptaTecnologiaAPI.csproj", "{775D325A-9E7B-447A-94BC-D9CA3338A374}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{9A1EF78E-6BD1-4E40-B62F-D236463AE04C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A1EF78E-6BD1-4E40-B62F-D236463AE04C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A1EF78E-6BD1-4E40-B62F-D236463AE04C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{775D325A-9E7B-447A-94BC-D9CA3338A374}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{775D325A-9E7B-447A-94BC-D9CA3338A374}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{775D325A-9E7B-447A-94BC-D9CA3338A374}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{775D325A-9E7B-447A-94BC-D9CA3338A374}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
